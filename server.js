@@ -2,7 +2,7 @@ var static = require('node-static'),
 	http = require('http'),
 	util = require('util');
 var webroot = './files',
-	port = 80;
+	port = 8080;
 var file = new(static.Server)(webroot, {
 	cache: 600,
 	headers: { 'X-Powered-By': 'node-static' }
