@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+	<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+
+	<script >
+	$(function(){
+
+		$.ajax({
+			url: "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=everyplace&count=10",
+			dataType: 'jsonp',
+			success: function(d)
+			{
+			console.log(d);
+			}
+				});
+	});
+	</script>
+</head>
+
+<body>
+
+	<p>
+		<img src"http:\/\/a0.twimg.com\/profile_images\/209028135\/commandshift3-command-symbol-logo_normal_normal.png"/>
+			how much extra space Microsoft
+	</p>
+
+
+</body>
+
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>This is It</title>
@@ -16,3 +49,4 @@
 		</section>
 	</body>
 </html>
+-->
