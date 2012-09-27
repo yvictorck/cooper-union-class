@@ -24,6 +24,40 @@
 			});
 	});
 	</script>
+		<script>
+$(function(){
+console.log('hello');
+});	
+
+$.ajax({
+url: 'http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=WeLove2NE1Fam',
+dataType:'jsonp',
+success:function(response){
+$.each(response, function(index, value){
+console.log(value);
+
+var text=value['text'];
+if(value.entities.urls){
+$.each(value.entities.urls, function(index, url){
+text=text.replace(url.url, '<a href="'+url.expanded_url+'">'+url.display_url+'</a>');	
+});
+}
+if(text.substr(0,1)==='@'){
+$('#messages').append('<li>'+text+'</li>');
+} else if(text.substr(0,2)==='RT') {
+$('#tweets').append('<li>'+text+'</li>');
+} else {
+$('#retweets').append('<li>'+text+'</li>');
+}
+}
+)
+},
+error:function(){
+console.log("damn, I'm sad.");
+}
+});
+
+</script>
 </head>
 
 <body>
