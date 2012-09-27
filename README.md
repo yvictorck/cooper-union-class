@@ -7,17 +7,17 @@ A User will be allowed to enter any twitter account and the map will show the lo
 ------------
 * for example *
 <pre>
-<table>
-  <tr>
-    <th>number of user</th><th>Tweet</th><th>Location</th>
-  </tr>
-  <tr>
-    <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
-  </tr>
-  <tr>
-    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
-  </tr>
-</table>
+	<table>
+	  <tr>
+	    <th>number of user</th><th>Tweet</th><th>Location</th>
+	  </tr>
+	  <tr>
+	    <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
+	  </tr>
+	  <tr>
+	    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
+	  </tr>
+	</table>
 </pre>
 
 <dl>
