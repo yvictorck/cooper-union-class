@@ -1,0 +1,1 @@
+This is just a sample project to get the students in a guest lecture at Cooper Union going with GitHub and Heroku.
