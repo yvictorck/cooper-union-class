@@ -6,6 +6,7 @@ A User will be allowed to enter any twitter account and the map will show the lo
 
 ------------
 * for example *
+<pre>
 <table>
   <tr>
     <th>number of user</th><th>Tweet</th><th>Location</th>
@@ -17,12 +18,11 @@ A User will be allowed to enter any twitter account and the map will show the lo
     <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
   </tr>
 </table>
+</pre>
 
-<pre>
 <dl>
 	<dt>Purpose</dt>
   	<dd>allow user to have a geo location and time view of their or others tweets</dd>
   	<dt>Limitation</dt>
   	<dd>If user deceide to disable geo location function. will not be able to track it</dd>
 </dl>
-</pre>
