@@ -2,11 +2,12 @@ Tweet Track
 ================================
 *Allow you to track you with your tweets*
 ------------
+<pre>
 A User will be allowed to enter any twitter account and the map will show the location of the past tweets that correspond to each tweet
-
+</pre>
 ------------
 * for example *
-<pre>
+
 	<table>
 	  <tr>
 	    <th>number of user</th><th>Tweet</th><th>Location</th>
@@ -18,7 +19,7 @@ A User will be allowed to enter any twitter account and the map will show the lo
 	    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
 	  </tr>
 	</table>
-</pre>
+
 
 <dl>
 	<dt>Purpose</dt>
