@@ -28,7 +28,7 @@
 			$.each(twitterData,function(index,tweet){ //if one object back, use twitterData.results, if get array back, use twitterData
 				//formattedData.push(tweet.text);
 				formattedData.push({
-					text: tweet.text
+					text: tweet.text,
 					from_user_name: tweet.from_user_name
 				});
 				//console.log('index: ',index, ', tweet:',tweet);
