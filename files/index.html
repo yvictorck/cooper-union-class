@@ -19,14 +19,13 @@
 
 		//store he data into the dom
 
-		if(localStorage.myData){
+		if(localStorage.twitterSearch){
+
+
 
 		}else{
 			localStorage.myData={};
 		}
-	
-	 </script>
-	 <script >
 	 	$(function(){
 		//ajax mean fetch info from www
 		$.ajax({
@@ -34,7 +33,8 @@
 			dataType: 'jsonp',
 			success: function(response)
 							{
-								console.log('yaya ajax!');
+								localStorage.twitterSearch = response;
+								console.log('put in localStorage!');
 							},
 				
 			error: function(error){
