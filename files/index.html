@@ -27,14 +27,35 @@
 			var formattedData = [];
 			$.each(twitterData,function(index,tweet){ //if one object back, use twitterData.results, if get array back, use twitterData
 				//formattedData.push(tweet.text);
+				console.log('index: ',index, ', tweet:',tweet);
 				formattedData.push({
 					text: tweet.text,
-					from_user_name: tweet.entities.user.screen_name
+					from_user_name: tweet.from_user_name
 				});
-				//console.log('index: ',index, ', tweet:',tweet);
+				var text=tweet.text;
+					if (tweet.entities) {
+		if(tweet.entities.urls){
+		$.each(tweet.entities.urls, function(i, url){
+			text=text.replace(url.url, '<a href="'+url.expanded_url+'">'+url.display_url+'</a>');	
+				});
+		}
+		if(text.substr(0,1)==='@'){
+		$('#messages1').append('<li>'+text+'</li>');
+		} else if(text.substr(0,2)==='RT') {
+			$('#tweets1').append('<li>'+text+'</li>');
+		} else {
+	$('#retweets1').append('<li>'+text+'</li>');
+		
+	}
+	};
 			});
 			//
-			console.log('the list of text in tweet:',formattedData);
+			
+
+	
+
+			localStorage.formattedData = JSON.stringify(formattedData);
+			console.log('horah');
 			// $.each(localStorage.twitterSearch, function(index, tweet){
 			// 	console.log('index: ',index, ', tweet:',tweet);
 			// })
@@ -61,35 +82,38 @@
 	});
 
 
-	 </script>
-		<script>
-$(function(){
-console.log('hello');
+	</script>
+	<script>
+	$(function(){
+		console.log('hello');
 });	
 
 $.ajax({
-url: 'http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=everyplace',
-dataType:'jsonp',
-success:function(response){
-$.each(response, function(index, value){
-console.log(value);
-
+	url: 'http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=everyplace',
+	dataType:'jsonp',
+	success:function(response){
+	$.each(response, function(index, value){
+		console.log(value);
 var text=value['text'];
-if(value.entities.urls){
-$.each(value.entities.urls, function(index, url){
-text=text.replace(url.url, '<a href="'+url.expanded_url+'">'+url.display_url+'</a>');	
-});
-}
-if(text.substr(0,1)==='@'){
-$('#messages').append('<li>'+text+'</li>');
-} else if(text.substr(0,2)==='RT') {
-$('#tweets').append('<li>'+text+'</li>');
-} else {
-$('#retweets').append('<li>'+text+'</li>');
-}
-}
-)
-},
+
+	
+
+		if(value.entities.urls){
+		$.each(value.entities.urls, function(index, url){
+			text=text.replace(url.url, '<a href="'+url.expanded_url+'">'+url.display_url+'</a>');	
+				});
+		}
+		if(text.substr(0,1)==='@'){
+		$('#messages').append('<li>'+text+'</li>');
+		} else if(text.substr(0,2)==='RT') {
+			$('#tweets').append('<li>'+text+'</li>');
+		} else {
+	$('#retweets').append('<li>'+text+'</li>');
+
+	}
+	}
+	)
+	},
 error:function(){
 console.log("damn, I'm sad.");
 }
@@ -99,16 +123,26 @@ console.log("damn, I'm sad.");
 </head>
 
 <body>
-	<ul id="tweets">
+	<ul id="tweets"></ul>
 <!--	<li>
 <img src="http://a0.twimg.com/profile_images/2591172309/314985_10151100058132918_318490155_n_normal.jpg" width="100" height="100"/>
 Posting my first tweet in class... :D
 </li>
 -->
 
-</ul>
+
 <ul id="messages"></ul>
 <ul id="retweets"></ul>
+	<ul id="tweets1"></ul>
+<!--	<li>
+<img src="http://a0.twimg.com/profile_images/2591172309/314985_10151100058132918_318490155_n_normal.jpg" width="100" height="100"/>
+Posting my first tweet in class... :D
+</li>
+-->
+
+
+<ul id="messages1"></ul>
+<ul id="retweets1"></ul>
 </body>
 
 </html>
