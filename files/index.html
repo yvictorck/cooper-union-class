@@ -29,7 +29,7 @@
 				//formattedData.push(tweet.text);
 				formattedData.push({
 					text: tweet.text,
-					from_user_name: tweet.from_user_name
+					from_user_name: tweet.entities.user.screen_name
 				});
 				//console.log('index: ',index, ', tweet:',tweet);
 			});
