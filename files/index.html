@@ -24,8 +24,9 @@
 			//console.log('data: ', localStorage.twitterSearch);
 			var twitterData = JSON.parse(localStorage.twitterSearch);
 			var formattedData = {};
+			console.log(twitterData);
 			$.each(localStorage.twitterSearch, function(index, tweet){
-				console.log(twitterData);//'index: ',index, ', tweet:',tweet);
+				console.log(//'index: ',index, ', tweet:',tweet);
 			})
 
 		}else{
