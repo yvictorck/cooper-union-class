@@ -22,7 +22,7 @@
 		if(localStorage.twitterSearch){
 
 			//console.log('data: ', localStorage.twitterSearch);
-			
+			var twitterData = JSON.parse(localStorage.twitterSearch);
 			var formattedData = {};
 			$.each(localStorage.twitterSearch, function(index, tweet){
 				console.log('index: ',index, ', tweet:',tweet);
@@ -38,7 +38,8 @@
 			dataType: 'jsonp',
 			success: function(response)
 							{
-								localStorage.twitterSearch = response;
+
+								localStorage.twitterSearch = JSON.stringify(response);
 								console.log('put in localStorage!');
 							},
 				
