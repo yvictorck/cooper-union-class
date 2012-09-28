@@ -21,7 +21,12 @@
 
 		if(localStorage.twitterSearch){
 
-			console.log('data: ', localStorage.twitterSearch);
+			//console.log('data: ', localStorage.twitterSearch);
+			
+			var formattedData = {};
+			$.each(localStorage.twitterSearch, function(index, tweet){
+				console.log('index: ',index, ', tweet:',tweet);
+			})
 
 		}else{
 			localStorage.myData={};
