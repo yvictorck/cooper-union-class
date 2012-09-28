@@ -26,11 +26,11 @@
 			//
 			var formattedData = [];
 			$.each(twitterData,function(index,tweet){ //if one object back, use twitterData.results, if get array back, use twitterData
-
-				console.log('index: ',index, ', tweet:',tweet);
+				formattedData.push(tweet.text);
+				//console.log('index: ',index, ', tweet:',tweet);
 			});
 			//
-			console.log(twitterData);
+			console.log('the list of text in tweet:',formattedData);
 			// $.each(localStorage.twitterSearch, function(index, tweet){
 			// 	console.log('index: ',index, ', tweet:',tweet);
 			// })
