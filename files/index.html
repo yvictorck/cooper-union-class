@@ -25,7 +25,7 @@
 			var twitterData = JSON.parse(localStorage.twitterSearch);
 			//
 			var formattedData = [];
-			$.each(twitterData.results,function(index,tweet){ //if one object back, use twitterData.results, if get array back, use twitterData
+			$.each(twitterData,function(index,tweet){ //if one object back, use twitterData.results, if get array back, use twitterData
 
 				console.log('index: ',index, ', tweet:',tweet);
 			});
