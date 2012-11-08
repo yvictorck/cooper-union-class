@@ -7,7 +7,7 @@
 	-webkit-box-shadow: 5px 5px 5px #888;
 	-moz-box-shadow: 5px 5px 5px #888;
 	box-shadow: 5px 5px 5px #888;
-	background-color:#49acec;
+	background-color:lightgrey;
 	border-radius: 5px;
 }
 #head
@@ -36,8 +36,10 @@
 	-moz-box-shadow: 5px 5px 5px #888;
 	box-shadow: 5px 5px 5px #888;
 	padding: 10px;
-	background-color: #49acec;
+	background-color: lightgrey;/*#49acec;*/
 	border-radius: 5px;
 }
-img {float:left;}
-p {color:blue;}
+a {text-decoration:none; border-color:yellow;}
+img{float:left;}
+
+/*p {color:blue;}*/

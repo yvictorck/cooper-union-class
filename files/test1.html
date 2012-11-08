@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tweet Track</title>
+	<link rel="stylesheet" type="text/css" href="test.css" />
+	<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <!--<link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet">-->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="test5.js"></script>
+     <link rel="shortcut icon" href="favicon.ico">
+    <!--<script type="text/javascript" src="mongoUtil.js"></script>-->
+    <script>
+
+    	$(document).ready(function(){
+    	userlist=[];
+ 		loclist=[];
+		markerlist=[];
+ 		pathCoordslist=[];
+ 		pathlist=[];
+ 		textlist=[];
+ 		timelist=[];
+ 		imagelist=[];
+ 		imagemakerlist=[];
+ 		windowlist=[];
+    	mongoUtil.config({
+    		"db": "victordb",
+			"appID":"heroku_app8150101",
+			"apiKey": "5099e500e4b0ec1736ec3df5",
+    	});
+    	
+
+    	})
+    </script>
+
+  </head>
+  <body onload="initialize()">
+	<div id="head">
+  		<img class="deco" src="Footprints.gif" width="200px" height="50px" /><p class="head"> Tweet Tracker<br></p><img class="deco" src="tbird.png" width="50px" height="50px" />
+  	</div>
+  	<div id="body">
+  		<div id="container">
+		  	<div id="form">
+			  	<form id='inputform'> <!--action="contact.php" method="post"-->
+					Twitter Username<br>
+			    	<input type="text" name="username"><br>
+					
+			    	
+			  	</form>
+			  	<button id="drop" >Track</button> <!--onclick="drop()"-->
+			  	<button id="refresh">Refresh</button>
+
+			  	<form id='recordform'>
+			  		records<br>
+			    	<input type="text" name="recordname"><br>
+					
+			    	
+			  	</form>
+
+			  	<!--<button id="postt" >Post</button>-->
+			  	<button id="gett" >Post Record/Get Record</button><br>
+			</div>
+
+		    <div id="map_canvas" style="width: 1000px; height: 600px;">map div</div>
+		</div>
+	</div>
+
+	
+  </body>
+</html>
